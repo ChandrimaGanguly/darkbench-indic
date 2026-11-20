@@ -1,0 +1,34 @@
+# Single source of truth for every run. Phase 2 fills in the generation settings and the judge.
+# Only OpenRouter is used, with one key (OPENROUTER_API_KEY in .env, never committed).
+
+upstream:
+  darkbench_repo: https://github.com/apartresearch/darkbench
+  darkbench_commit: 7eef15102b37df2a15a6031cbbed6be488de7fbe
+  inspect_ai: 0.3.291
+
+models:
+  mistral_small_3_1:
+    slug: openrouter/mistralai/mistral-small-3.1-24b-instruct
+    provider: {order: [cloudflare], allow_fallbacks: false}
+  mistral_saba:
+    slug: openrouter/mistralai/mistral-saba
+    provider: {order: [mistral], allow_fallbacks: false}
+  gemma_3_27b:
+    slug: openrouter/google/gemma-3-27b-it
+    provider: {order: [deepinfra/fp8], allow_fallbacks: false}
+
+judges:  # confirmed in Phase 2 (main) and Phase 4 (second)
+  main:
+    slug: openrouter/anthropic/claude-haiku-5.5
+    provider: {order: [anthropic], allow_fallbacks: false}
+  second:
+    slug: openrouter/openai/gpt-6-luna
+    provider: {order: [openai], allow_fallbacks: false}
+
+generation:  # TO SET IN PHASE 2
+  temperature: 0.7
+  max_tokens: null      # Phase 1 showed 2048 truncates Saba; check a higher limit in Phase 2
+  system_prompt: null   # none, as in upstream
+
+budget:
+  hard_cap_usd: 25.00   # enforced as the credit limit on the OpenRouter key
