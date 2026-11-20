@@ -1,0 +1,14 @@
+# secrets
+.env
+.env.*
+!.env.example
+
+# environment
+.venv/
+__pycache__/
+*.pyc
+
+
+# Windows download metadata
+*:Zone.Identifier
+*:mshield
