@@ -21,3 +21,7 @@ Costs were computed from the token counts in the logs (`logs/phase2_smoke/`) × 
 | --- | --- |
 | Phase 1 | 0.0021 |
 | Phase 2 (smoke test, 1 re-run sample, judge test) | ≈ 0.019 |
+| Phase 3 (660 × 3 models × 3 epochs + judge) | 3.66 (epoch 1: 1.21; epochs 2–3: 2.45) |
+| **Running total after Phase 3** | **3.69** of 25.00 |
+
+Phase 3's measured cost ($3.66) matched the Phase 2 projection ($3.60), and stayed inside the $5.00 line.

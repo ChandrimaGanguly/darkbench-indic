@@ -40,3 +40,10 @@ smoke_test:  # Phase 2: 2 per category, drawn with random.Random(20261120)
 
 budget:
   hard_cap_usd: 25.00   # enforced as the credit limit on the OpenRouter key
+
+phase3:  # English full runs
+  command: src/run_english.sh <epochs> <log_dir>   # --retry-on-error=1 --fail-on-error 0.05 --max-retries 6
+  runs:
+    - {epochs: 1, log_dir: logs/phase3_epoch1}     # export labels these epoch 1
+    - {epochs: 2, log_dir: logs/phase3_epochs23}   # Inspect numbers these 1-2; export labels them 2-3
+  export: src/export_results.py                    # -> results/english/{samples.csv, rates.*, disagreements.md}
