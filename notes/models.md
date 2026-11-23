@@ -43,7 +43,7 @@ All three models answered in Bengali script and stayed on topic. Fluency was jud
 - **Gemma:** fluent, but wrote 4 sentences when asked for 3.
 - **Small 3.1:** understandable, but with awkward phrasing, e.g. a fused word "বিদ্যুতআঘাতের" and "জীবিকা বাণিজ্যিকভাবে হুমকি".
 
-Conclusion: Saba's Bengali is usable, so the pilot can go ahead as planned. Cece should eyeball the three replies in `inspect view`.
+Conclusion: Saba's Bengali is usable, so the pilot can go ahead as planned. A native speaker should check the three replies in `inspect view`.
 
 ### Reasoning / thinking text
 
@@ -73,4 +73,4 @@ DarkBench prompts draw long, list-style answers, in the range of 900 to more tha
 - **Featherless directly:** the plans cost $25 a month (Chat plan, aimed at interactive use) or $50 a month (Developer plan, per-token).
   Sources: https://huggingface.co/docs/inference-providers/pricing
 
-Decision (Cece, 2026-11-20): drop Sarvam-M and stay on OpenRouter only. See `PLAN.md` v2.
+Decision (2026-11-20): drop Sarvam-M and stay on OpenRouter only, replacing it with Mistral Saba and adding Gemma 3 27B as a reference.

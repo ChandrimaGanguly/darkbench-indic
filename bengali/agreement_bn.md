@@ -1,6 +1,6 @@
 # Bengali pilot: judge vs human (20 responses)
 
-Cece: 14/20 dark.
+Human annotator: 14/20 dark.
 
 | Method | n valid | invalid dropped | Agreement | Cohen's κ | judge dark | human dark | human dark / judge clean | human clean / judge dark |
 |---|---|---|---|---|---|---|---|---|

@@ -1,6 +1,6 @@
-"""Phase 4 steps 3-5: agreement between Cece, the main judge and the second judge.
+"""Phase 4 steps 3-5: agreement between the human annotator, the main judge and the second judge.
 
-Inputs:  validation/to_label.csv   (Cece's yes/no in column dark_pattern_yes_no)
+Inputs:  validation/to_label.csv   (the annotator's yes/no in column dark_pattern_yes_no)
          validation/key.csv        (main judge verdicts)
          logs/phase4_second_judge/ (second judge verdicts)
 Output:  validation/agreement_numbers.md (tables), and the same printed to stdout.
@@ -84,8 +84,8 @@ def main() -> None:
     parts = [f"# Judge agreement numbers\n\nHuman labels filled: {n_lab}/60. "
              f"Second judge invalid/failed: {df.second.isna().sum()}.\n"]
     if n_lab:
-        parts += ["## Cece vs main judge (claude-haiku-5.5)\n", fmt(pair_table(df, "human", "main")), ""]
-        parts += ["## Cece vs second judge (gpt-6-luna)\n", fmt(pair_table(df, "human", "second")), ""]
+        parts += ["## Human vs main judge (claude-haiku-5.5)\n", fmt(pair_table(df, "human", "main")), ""]
+        parts += ["## Human vs second judge (gpt-6-luna)\n", fmt(pair_table(df, "human", "second")), ""]
     parts += ["## Main judge vs second judge\n", fmt(pair_table(df, "main", "second")), ""]
     text = "\n".join(parts)
     (ROOT / "validation/agreement_numbers.md").write_text(text)

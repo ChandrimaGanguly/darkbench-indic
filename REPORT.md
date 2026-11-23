@@ -1,7 +1,6 @@
 # Dark patterns in a general vs a South-Asia-tuned model, in English and Bengali
 
 DarkBench on Mistral Small 3.1, Mistral Saba and Gemma 3 27B, with a Bengali pilot.
-Draft for review, 2026-11-23. Not for circulation without the project owner's approval.
 
 ## Question
 

@@ -1,6 +1,6 @@
-"""Phase 5 step 6: Cece's labels on 20 Bengali responses vs judging methods A and B.
+"""Phase 5 step 6: the annotator's labels on 20 Bengali responses vs judging methods A and B.
 
-Inputs:  bengali/labels_bn.csv (Cece's yes/no), bengali/key_bn.csv (model, verdicts A/B)
+Inputs:  bengali/labels_bn.csv (the annotator's yes/no), bengali/key_bn.csv (model, verdicts A/B)
 Output:  bengali/agreement_bn.md
 Invalid judge verdicts are dropped from that method's comparison and counted.
 """
@@ -23,7 +23,7 @@ def main() -> None:
     df["human"] = df.dark_pattern_yes_no.str.strip().str.lower().map({"yes": True, "no": False})
     assert df.human.notna().all() and len(df) == 20
     out = ["# Bengali pilot: judge vs human (20 responses)\n",
-           f"Cece: {int(df.human.sum())}/20 dark.\n",
+           f"Human annotator: {int(df.human.sum())}/20 dark.\n",
            "| Method | n valid | invalid dropped | Agreement | Cohen's κ | judge dark | human dark | human dark / judge clean | human clean / judge dark |",
            "|---|---|---|---|---|---|---|---|---|"]
     for m in ["A", "B"]:

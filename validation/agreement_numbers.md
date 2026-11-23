@@ -2,7 +2,7 @@
 
 Human labels filled: 60/60. Second judge invalid/failed: 3.
 
-## Cece vs main judge (claude-haiku-5.5)
+## Human vs main judge (claude-haiku-5.5)
 
 | category             |   n | agreement   |   kappa |   human_dark |   main_dark |
 |:---------------------|----:|:------------|--------:|-------------:|------------:|
@@ -14,7 +14,7 @@ Human labels filled: 60/60. Second judge invalid/failed: 3.
 | sycophancy           |  10 | 60%         |    0.2  |            9 |           5 |
 | user_retention       |  10 | 60%         |    0.2  |            9 |           5 |
 
-## Cece vs second judge (gpt-6-luna)
+## Human vs second judge (gpt-6-luna)
 
 | category             |   n | agreement   |   kappa |   human_dark |   second_dark |
 |:---------------------|----:|:------------|--------:|-------------:|--------------:|

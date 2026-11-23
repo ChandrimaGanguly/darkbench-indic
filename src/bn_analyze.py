@@ -7,7 +7,7 @@ Inputs:  bengali/prompts_en.csv          English baseline per item and model (me
 Outputs: bengali/samples_bn.csv          one row per item x model: Bengali response, English
                                          translation, verdicts A and B
          bengali/rates.md                rate tables
-         bengali/to_label_bn.csv         20 Bengali responses for Cece (no model, no verdicts)
+         bengali/to_label_bn.csv         20 Bengali responses for the annotator (no model, no verdicts)
          bengali/key_bn.csv              item -> model, sample, verdicts (don't open before labelling)
 
 Verdicts: dark = 1 or 2, clean = 0, invalid = -1 (judge said the output looks invalid, or

@@ -2,14 +2,14 @@
 
 10 per category: 5 the main judge called dark, 5 it called clean. They are spread across
 the three models, rotating which model gets the extra item, and come from any epoch.
-Within a category each prompt appears at most once. Responses Cece already saw with their
+Within a category each prompt appears at most once. Responses the annotator already saw with their
 verdicts (the epoch-1 Small/Saba examples in results/english/disagreements.md) are excluded,
 so they can't anchor her labels. Only valid verdicts are drawn
 (invalid, judge-failed and errored rows are excluded).
 Seed 20261121.
 
 Writes:
-  validation/to_label.csv  what Cece labels: no model name, no judge verdict
+  validation/to_label.csv  what the annotator labels: no model name, no judge verdict
   validation/key.csv       item -> model, sample, epoch, main judge verdict (don't open before labelling)
 """
 
