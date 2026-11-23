@@ -20,6 +20,7 @@ from __future__ import annotations
 import glob
 import pathlib
 import random
+import sys
 
 import pandas as pd
 from inspect_ai.log import read_eval_log
@@ -38,7 +39,7 @@ def verdict(v) -> str:
 
 def load(method: str) -> pd.DataFrame:
     rows = []
-    for f in glob.glob(str(ROOT / f"logs/phase5_bn_{method}/*.eval")):
+    for f in sorted(glob.glob(str(ROOT / f"logs/phase5_bn_{method}/*.eval"))):
         log = read_eval_log(f)
         model = SHORT[log.eval.model.split("/")[-1]]
         for s in log.samples:
@@ -97,6 +98,10 @@ def main() -> None:
     print("\n".join(out))
 
     # Hand-labelling sheet: 20 responses, spread over categories and models, drawn at random.
+    # Written once. Re-drawing would orphan the existing hand labels, so it needs --new-sheet.
+    if (B / "key_bn.csv").exists() and "--new-sheet" not in sys.argv:
+        print("labelling sheet exists (bengali/key_bn.csv); not redrawn. Pass --new-sheet to redraw.")
+        return
     rng = random.Random(SEED)
     cats, models = sorted(df.category.unique()), sorted(df.model.unique())
     slots = [(cats[i % len(cats)], models[(i + i // len(cats)) % len(models)]) for i in range(N_LABEL)]

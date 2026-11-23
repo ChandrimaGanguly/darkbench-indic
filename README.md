@@ -60,6 +60,16 @@ validation/               hand labels, judge agreement
 bengali/                  prompts, translations, results
 ```
 
+## Reproduce
+
+```bash
+./run_all.sh          # $0: rebuild every table, chart and agreement number from the committed logs and labels
+./run_all.sh full     # ~$4: re-run all inference (English + Bengali A/B); old logs are archived first
+```
+
+Human steps (hand labels, translation review) are not re-run; `full` mode leaves the
+agreement numbers describing the committed responses. Results are written up in `REPORT.md`.
+
 ## Rules
 
 - Upstream code in `vendor/` is never edited. Any change in behaviour goes in `src/` as a wrapper.
